@@ -17,19 +17,19 @@ selectedHero:Hero;
 // onSelect(hero:Hero):void{
 // this.selectedHero=hero;
 //}
-hero:Hero={
-id:1,
-name:'windstrom'
-}
+// hero:Hero={
+// id:1,
+// name:'windstrom'
+// }
   constructor(private heroService: HeroService, private messageService: MessageService) { }
 
   ngOnInit() {
     this.getHeroes();
   }
-   onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-    this.messageService.add(`HeroService: Selected hero id=${hero.id}`);
-  }
+  //  onSelect(hero: Hero): void {
+  //   this.selectedHero = hero;
+  //   this.messageService.add(`HeroService: Selected hero id=${hero.id}`);
+  // }
 
   getHeroes(): void {
     this.heroService.getHeroes()
