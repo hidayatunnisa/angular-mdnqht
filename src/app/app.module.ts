@@ -10,10 +10,15 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { RoutingModule } from './routing/routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import {HttpClientModule} from '@angular/common/http';
+import{HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './in-memory-data.service';
 
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, RoutingModule ],
+  imports:      [ BrowserModule, FormsModule, RoutingModule,HttpClientModule,HttpClientInMemoryWebApiModule.forRoot(
+  InMemoryDataService, { dataEncapsulation: false }
+)],
   declarations: [ AppComponent, HelloComponent, HeroesComponent, HeroDetailComponent,MessagesComponent, DashboardComponent],
   bootstrap:    [ AppComponent ],
   providers: []//HeroserviceService
